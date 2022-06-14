@@ -74,11 +74,11 @@
 // Limit Switches
 //
 #define X_MIN_PIN           3
-#ifndef X_MAX_PIN
-  #define X_MAX_PIN         2
-#endif
+// #ifndef X_MAX_PIN
+//   #define X_MAX_PIN         2
+// #endif
 #define Y_MIN_PIN          14
-#define Y_MAX_PIN          15
+//#define Y_MAX_PIN          15
 #define Z_MIN_PIN          18
 #define Z_MAX_PIN          19
 
@@ -287,6 +287,7 @@
 
 #if ENABLED(IS_RAMPS_EFB)                      // Hotend, Fan, Bed
   #define HEATER_BED_PIN   RAMPS_D8_PIN
+  #define HEATER_1_PIN     7
 #elif ENABLED(IS_RAMPS_EEF)                    // Hotend, Hotend, Fan
   #define HEATER_1_PIN     RAMPS_D9_PIN
 #elif ENABLED(IS_RAMPS_EEB)                    // Hotend, Hotend, Bed
@@ -327,7 +328,8 @@
 
 // define digital pin 4 for the filament runout sensor. Use the RAMPS 1.4 digital input 4 on the servos connector
 #ifndef FIL_RUNOUT_PIN
-  #define FIL_RUNOUT_PIN    4
+  #define FIL_RUNOUT_PIN   2
+  #define FIL_RUNOUT2_PIN  15
 #endif
 
 #ifndef PS_ON_PIN
