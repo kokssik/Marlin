@@ -120,6 +120,7 @@ tags
 .pio*
 .pioenvs
 .piolibdeps
+buildroot/share/PlatformIO/scripts
 lib/readme.txt
 
 #Visual Studio
