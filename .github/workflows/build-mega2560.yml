@@ -8,7 +8,7 @@ name: Build A10 Pro with Bilinear leveling
 on:
   push:
     branches:
-    - bugfix-2.1.x-A10Pro-bilin
+    - bugfix-2.1.x-A10Pro-bilin-SD
     paths-ignore:
     - config/**
     - data/**
@@ -61,4 +61,4 @@ jobs:
         pio run -j7
     - name: Upload the fw    
       run: |
-        curl --user "${{ secrets.DAV_USER }}:${{ secrets.DAV_PASS }}" -T ".pio/build/mega2560/firmware.hex" "${{ secrets.DAV_SERVER }}/${{ secrets.DAV_PATH }}/firmware_`date +%d_%m_%y_%H_%M`_A10Pro_2.1.x_bilinear.hex" --anyauth
+        curl --user "${{ secrets.DAV_USER }}:${{ secrets.DAV_PASS }}" -T ".pio/build/mega2560/firmware.hex" "${{ secrets.DAV_SERVER }}/${{ secrets.DAV_PATH }}/firmware_`date +%d_%m_%y_%H_%M`_A10Pro_2.1.x_bilinear-SD.hex" --anyauth
