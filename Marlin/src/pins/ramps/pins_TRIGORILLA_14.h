@@ -145,3 +145,5 @@
   #endif
 
 #endif // HAS_WIRED_LCD
+
+// #define TEMP_SENSOR_1 15
