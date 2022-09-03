@@ -195,7 +195,7 @@
 //
 //#define LED_PIN                           PB14
 //#define PS_ON_PIN                         PE11
-//#define KILL_PIN                          PC5
+#define KILL_PIN                          PC5
 
 /**
  *         ------                 ------
