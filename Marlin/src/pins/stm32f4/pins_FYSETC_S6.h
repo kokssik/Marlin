@@ -103,10 +103,10 @@
 #define E0_ENABLE_PIN                       PD4
 #define E0_CS_PIN                           PD7
 
-#define E1_STEP_PIN                         PE6
-#define E1_DIR_PIN                          PC13
-#define E1_ENABLE_PIN                       PE5
-#define E1_CS_PIN                           PC14
+#define Z2_STEP_PIN                         PE6
+#define Z2_DIR_PIN                          PC13
+#define Z2_ENABLE_PIN                       PE5
+#define Z2_CS_PIN                           PC14
 
 #define E2_STEP_PIN                         PE2
 #define E2_DIR_PIN                          PE4
