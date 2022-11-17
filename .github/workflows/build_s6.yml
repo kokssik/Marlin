@@ -3,7 +3,7 @@
 # Build and push the fw to a WebDAV server
 #
 
-name: Build A10 Pro with Bilinear leveling
+name: Build for Fysetc S6
 
 on:
   push:
@@ -60,3 +60,8 @@ jobs:
     - name: Upload the fw    
       run: |
         curl --user "${{ secrets.DAV_USER }}:${{ secrets.DAV_PASS }}" -T ".pio/build/FYSETC_S6_8000/firmware.bin" "${{ secrets.DAV_SERVER }}/${{ secrets.DAV_PATH }}/firmware_`date +%d_%m_%y_%H_%M`_1S_S6.bin" --anyauth
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: firmware.bin
+        path: .pio/build/FYSETC_S6_8000/firmware.bin
