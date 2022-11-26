@@ -2135,25 +2135,27 @@
 
 #if ENABLED(SKEW_CORRECTION)
   // Input all length measurements here:
-  #define XY_DIAG_AC 282.8427124746
-  #define XY_DIAG_BD 282.8427124746
-  #define XY_SIDE_AD 200
+  #define XY_DIAG_AC 70.49
+  #define XY_DIAG_BD 70.50
+  #define XY_SIDE_AD 49.94
 
   // Or, set the XY skew factor directly:
   //#define XY_SKEW_FACTOR 0.0
 
   #define SKEW_CORRECTION_FOR_Z
   #if ENABLED(SKEW_CORRECTION_FOR_Z)
-    #define XZ_DIAG_AC 282.8427124746
-    #define XZ_DIAG_BD 282.8427124746
-    #define YZ_DIAG_AC 282.8427124746
-    #define YZ_DIAG_BD 282.8427124746
-    #define YZ_SIDE_AD 200
+    #define XZ_DIAG_AC 70.15
+    #define XZ_DIAG_BD 70.12
+    #define YZ_DIAG_AC 70.48
+    #define YZ_DIAG_BD 69.89
+    #define YZ_SIDE_AD 50.04
 
     // Or, set the Z skew factors directly:
     //#define XZ_SKEW_FACTOR 0.0
     //#define YZ_SKEW_FACTOR 0.0
   #endif
+
+  // M852 I -0.00014185501183532667 J 0.0004277887069052878 K0.008407667678152861
 
   // Enable this option for M852 to set skew at runtime
   #define SKEW_CORRECTION_GCODE
