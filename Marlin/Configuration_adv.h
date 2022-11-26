@@ -320,7 +320,7 @@
    * and/or decrease WATCH_TEMP_INCREASE. WATCH_TEMP_INCREASE should not be set
    * below 2.
    */
-  #define WATCH_TEMP_PERIOD  60               // Seconds
+  #define WATCH_TEMP_PERIOD  50               // Seconds
   #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
 #endif
 
@@ -334,7 +334,7 @@
   /**
    * As described above, except for the bed (M140/M190/M303).
    */
-  #define WATCH_BED_TEMP_PERIOD                80 // Seconds
+  #define WATCH_BED_TEMP_PERIOD                70 // Seconds
   #define WATCH_BED_TEMP_INCREASE               2 // Degrees Celsius
 #endif
 
@@ -537,12 +537,12 @@
  */
 #define USE_CONTROLLER_FAN
 #if ENABLED(USE_CONTROLLER_FAN)
-  #define CONTROLLER_FAN_PIN FAN2_PIN       // Set a custom pin for the controller fan
+  #define CONTROLLER_FAN_PIN FAN2_PIN           // Set a custom pin for the controller fan
   //#define CONTROLLER_FAN_USE_Z_ONLY       // With this option only the Z axis is considered
   //#define CONTROLLER_FAN_IGNORE_Z         // Ignore Z stepper. Useful when stepper timeout is disabled.
-  #define CONTROLLERFAN_SPEED_MIN         0 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
+  #define CONTROLLERFAN_SPEED_MIN       180 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
   #define CONTROLLERFAN_SPEED_ACTIVE    255 // (0-255) Active speed, used when any motor is enabled
-  #define CONTROLLERFAN_SPEED_IDLE        0 // (0-255) Idle speed, used when motors are disabled
+  #define CONTROLLERFAN_SPEED_IDLE       80 // (0-255) Idle speed, used when motors are disabled
   #define CONTROLLERFAN_IDLE_TIME        60 // (seconds) Extra time to keep the fan running after disabling motors
 
   // Use TEMP_SENSOR_BOARD as a trigger for enabling the controller fan
@@ -1077,7 +1077,7 @@
  *  X<1>         Set the given parameters only for the X axis.
  *  Y<1>         Set the given parameters only for the Y axis.
  */
-//#define INPUT_SHAPING
+#define INPUT_SHAPING
 #if ENABLED(INPUT_SHAPING)
   #define SHAPING_FREQ_X    40  // (Hz) The dominant resonant frequency of the X axis.
   #define SHAPING_FREQ_Y    40  // (Hz) The dominant resonant frequency of the Y axis.
@@ -1478,7 +1478,7 @@
   #if ENABLED(SET_INTERACTION_TIME)
     #define SHOW_INTERACTION_TIME         // Display time until next user interaction ('C' = filament change)
   #endif
-  //#define M73_REPORT                    // Report progress to host with 'M73'
+  #define M73_REPORT                    // Report progress to host with 'M73'
 #endif
 
 // LCD Print Progress options, multiple can be rotated depending on screen layout
@@ -1517,7 +1517,7 @@
   // Enable this option and set to HIGH if your SD cards are incorrectly detected.
   #define SD_DETECT_STATE LOW
 
-  //#define SD_IGNORE_AT_STARTUP            // Don't mount the SD card when starting up
+  #define SD_IGNORE_AT_STARTUP            // Don't mount the SD card when starting up
   //#define SDCARD_READONLY                 // Read-only SD card (to save over 2K of flash)
 
   //#define GCODE_REPEAT_MARKERS            // Enable G-code M808 to set repeat markers and do looping
@@ -1533,7 +1533,7 @@
 
   #define SD_MENU_CONFIRM_START             // Confirm the selected SD file before printing
 
-  //#define NO_SD_AUTOSTART                 // Remove auto#.g file support completely to save some Flash, SRAM
+  #define NO_SD_AUTOSTART                 // Remove auto#.g file support completely to save some Flash, SRAM
   //#define MENU_ADDAUTOSTART               // Add a menu option to run auto#.g files
 
   #define BROWSE_MEDIA_ON_INSERT          // Open the file browser when media is inserted
@@ -1556,7 +1556,7 @@
    */
   #define POWER_LOSS_RECOVERY
   #if ENABLED(POWER_LOSS_RECOVERY)
-    #define PLR_ENABLED_DEFAULT   true // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
+    #define PLR_ENABLED_DEFAULT   false // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
     //#define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss
     //#define POWER_LOSS_ZRAISE       2 // (mm) Z axis raise on resume (on power loss with UPS)
     //#define POWER_LOSS_PIN         44 // Pin to detect power loss. Set to -1 to disable default pin on boards without module.
@@ -2095,7 +2095,7 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-//#define LIN_ADVANCE
+#define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
   #if ENABLED(DISTINCT_E_FACTORS)
     #define ADVANCE_K { 0.22 }    // (mm) Compression length per 1mm/s extruder speed, per extruder
@@ -2459,14 +2459,14 @@
 //#define NO_TIMEOUTS 1000 // Milliseconds
 
 // Some clients will have this feature soon. This could make the NO_TIMEOUTS unnecessary.
-//#define ADVANCED_OK
+#define ADVANCED_OK
 
 // Printrun may have trouble receiving long strings all at once.
 // This option inserts short delays between lines of serial output.
 #define SERIAL_OVERRUN_PROTECTION
 
 // For serial echo, the number of digits after the decimal point
-//#define SERIAL_FLOAT_PRECISION 4
+#define SERIAL_FLOAT_PRECISION 4
 
 /**
  * Set the number of proportional font spaces required to fill up a typical character space.
@@ -2861,8 +2861,8 @@
   #endif
 
   #if AXIS_IS_TMC(Y)
-    #define Y_CURRENT       700
-    #define Y_CURRENT_HOME  600
+    #define Y_CURRENT       750
+    #define Y_CURRENT_HOME  650
     #define Y_MICROSTEPS     32
     #define Y_RSENSE          0.11
     #define Y_CHAIN_POS      -1
@@ -2887,7 +2887,7 @@
     #define Z_RSENSE          0.11
     #define Z_CHAIN_POS      -1
     #define Z_INTERPOLATE  true
-    //#define Z_HOLD_MULTIPLIER 0.5
+    #define Z_HOLD_MULTIPLIER 0.5
   #endif
 
   #if AXIS_IS_TMC(Z2)
@@ -2896,8 +2896,8 @@
     #define Z2_MICROSTEPS    Z_MICROSTEPS
     #define Z2_RSENSE         0.11
     #define Z2_CHAIN_POS     -1
-    //#define Z2_INTERPOLATE true
-    //#define Z2_HOLD_MULTIPLIER 0.5
+    #define Z2_INTERPOLATE true
+    #define Z2_HOLD_MULTIPLIER 0.5
   #endif
 
   #if AXIS_IS_TMC(Z3)
@@ -2981,7 +2981,7 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT      600
+    #define E0_CURRENT      650
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
@@ -3170,7 +3170,7 @@
    * Define your own with:
    * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
    */
-  #define CHOPPER_TIMING CHOPPER_DEFAULT_24V        // All axes (override below)
+  #define CHOPPER_TIMING CHOPPER_PRUSAMK3_24V        // All axes (override below)
   //#define CHOPPER_TIMING_X  CHOPPER_TIMING        // For X Axes (override below)
   //#define CHOPPER_TIMING_X2 CHOPPER_TIMING_X
   //#define CHOPPER_TIMING_Y  CHOPPER_TIMING        // For Y Axes (override below)
@@ -3230,7 +3230,7 @@
   #define X2_HYBRID_THRESHOLD    100
   #define Y_HYBRID_THRESHOLD     100
   #define Y2_HYBRID_THRESHOLD    100
-  #define Z_HYBRID_THRESHOLD      12
+  #define Z_HYBRID_THRESHOLD       3
   #define Z2_HYBRID_THRESHOLD      3
   #define Z3_HYBRID_THRESHOLD      3
   #define Z4_HYBRID_THRESHOLD      3
@@ -3279,9 +3279,9 @@
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
-    #define X_STALL_SENSITIVITY  100
+    #define X_STALL_SENSITIVITY  150
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-    #define Y_STALL_SENSITIVITY  100
+    #define Y_STALL_SENSITIVITY  150
     #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
     //#define Z_STALL_SENSITIVITY  8
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
@@ -3294,7 +3294,7 @@
     //#define V_STALL_SENSITIVITY  8
     //#define W_STALL_SENSITIVITY  8
     //#define SPI_ENDSTOPS              // TMC2130 only
-    //#define IMPROVE_HOMING_RELIABILITY
+    #define IMPROVE_HOMING_RELIABILITY
   #endif
 
   // @section tmc/config
@@ -3985,7 +3985,7 @@
  *
  * Implement M486 to allow Marlin to skip objects
  */
-//#define CANCEL_OBJECTS
+#define CANCEL_OBJECTS
 #if ENABLED(CANCEL_OBJECTS)
   #define CANCEL_OBJECTS_REPORTING // Emit the current object as a status message
 #endif
@@ -4102,7 +4102,7 @@
  */
 //#define MECHANICAL_GANTRY_CALIBRATION
 #if ENABLED(MECHANICAL_GANTRY_CALIBRATION)
-  #define GANTRY_CALIBRATION_CURRENT          350     // Default calibration current in ma
+  #define GANTRY_CALIBRATION_CURRENT          400     // Default calibration current in ma
   #define GANTRY_CALIBRATION_EXTRA_HEIGHT      15     // Extra distance in mm past Z_###_POS to move
   #define GANTRY_CALIBRATION_FEEDRATE         500     // Feedrate for correction move
   //#define GANTRY_CALIBRATION_TO_MIN                 // Enable to calibrate Z in the MIN direction

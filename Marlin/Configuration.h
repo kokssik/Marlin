@@ -852,8 +852,8 @@
 
 #define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
 #define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
-//#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
-//#define THERMAL_PROTECTION_COOLER  // Enable thermal protection for the laser cooling
+// #define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
+// #define THERMAL_PROTECTION_COOLER  // Enable thermal protection for the laser cooling
 
 //===========================================================================
 //============================= Mechanical Settings =========================
@@ -1492,13 +1492,13 @@
 #define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_FEEDRATE (150*60)
+#define XY_PROBE_FEEDRATE (133*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (10*60)
+#define Z_PROBE_FEEDRATE_FAST (6*60)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
-#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 4)
+#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 3)
 
 /**
  * Probe Activation Switch
@@ -1567,7 +1567,7 @@
 #define Z_CLEARANCE_MULTI_PROBE     1 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -8 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20
@@ -1983,7 +1983,7 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 10             // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 10              // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
@@ -2072,7 +2072,7 @@
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
 #define MANUAL_X_HOME_POS -9.5
-#define MANUAL_Y_HOME_POS -5
+#define MANUAL_Y_HOME_POS -5.0
 //#define MANUAL_Z_HOME_POS 0
 //#define MANUAL_I_HOME_POS 0
 //#define MANUAL_J_HOME_POS 0
@@ -2091,12 +2091,12 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT (35)  // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT (10)  // Y point for Z homing
+  #define Z_SAFE_HOMING_X_POINT 35  // X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT 10  // Y point for Z homing
 #endif
 
 // Homing speeds (linear=mm/min, rotational=°/min)
-#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (6*60) }
+#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (6*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
@@ -2142,7 +2142,7 @@
   // Or, set the XY skew factor directly:
   //#define XY_SKEW_FACTOR 0.0
 
-  //#define SKEW_CORRECTION_FOR_Z
+  #define SKEW_CORRECTION_FOR_Z
   #if ENABLED(SKEW_CORRECTION_FOR_Z)
     #define XZ_DIAG_AC 282.8427124746
     #define XZ_DIAG_BD 282.8427124746
@@ -2394,7 +2394,7 @@
  *
  * View the current statistics with M78.
  */
-//#define PRINTCOUNTER
+#define PRINTCOUNTER
 #if ENABLED(PRINTCOUNTER)
   #define PRINTCOUNTER_SAVE_INTERVAL 60 // (minutes) EEPROM save interval during print. A value of 0 will save stats at end of print.
 #endif
@@ -2487,7 +2487,7 @@
  * SD Card support is disabled by default. If your controller has an SD slot,
  * you must uncomment the following option or it won't work.
  */
-#define SDSUPPORT
+//#define SDSUPPORT
 
 /**
  * SD CARD: ENABLE CRC
