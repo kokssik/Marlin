@@ -110,13 +110,14 @@
 #define BOARD_COPYMASTER_3D           1154  // Copymaster 3D
 #define BOARD_ORTUR_4                 1155  // Ortur 4
 #define BOARD_TENLOG_D3_HERO          1156  // Tenlog D3 Hero IDEX printer
-#define BOARD_RAMPS_S_12_EEFB         1157  // Ramps S 1.2 by Sakul.cz (Power outputs: Hotend0, Hotend1, Fan, Bed)
-#define BOARD_RAMPS_S_12_EEEB         1158  // Ramps S 1.2 by Sakul.cz (Power outputs: Hotend0, Hotend1, Hotend2, Bed)
-#define BOARD_RAMPS_S_12_EFFB         1159  // Ramps S 1.2 by Sakul.cz (Power outputs: Hotend, Fan0, Fan1, Bed)
-#define BOARD_LONGER3D_LK1_PRO        1160  // Longer LK1 PRO / Alfawise U20 Pro (PRO version)
-#define BOARD_LONGER3D_LKx_PRO        1161  // Longer LKx PRO / Alfawise Uxx Pro (PRO version)
-#define BOARD_ZRIB_V53                1162  // Zonestar zrib V5.3 (Chinese RAMPS replica)
-#define BOARD_PXMALION_CORE_I3        1163  // Pxmalion Core I3
+#define BOARD_TENLOG_MB1_V23          1157  // Tenlog D3, D5, D6 IDEX Printer
+#define BOARD_RAMPS_S_12_EEFB         1158  // Ramps S 1.2 by Sakul.cz (Power outputs: Hotend0, Hotend1, Fan, Bed)
+#define BOARD_RAMPS_S_12_EEEB         1159  // Ramps S 1.2 by Sakul.cz (Power outputs: Hotend0, Hotend1, Hotend2, Bed)
+#define BOARD_RAMPS_S_12_EFFB         1160  // Ramps S 1.2 by Sakul.cz (Power outputs: Hotend, Fan0, Fan1, Bed)
+#define BOARD_LONGER3D_LK1_PRO        1161  // Longer LK1 PRO / Alfawise U20 Pro (PRO version)
+#define BOARD_LONGER3D_LKx_PRO        1162  // Longer LKx PRO / Alfawise Uxx Pro (PRO version)
+#define BOARD_ZRIB_V53                1163  // Zonestar zrib V5.3 (Chinese RAMPS replica)
+#define BOARD_PXMALION_CORE_I3        1164  // Pxmalion Core I3
 
 //
 // RAMBo and derivatives
@@ -355,7 +356,7 @@
 #define BOARD_CREALITY_V431_D         4051  // Creality v4.3.1d (STM32F103RC / STM32F103RE)
 #define BOARD_CREALITY_V452           4052  // Creality v4.5.2 (STM32F103RC / STM32F103RE)
 #define BOARD_CREALITY_V453           4053  // Creality v4.5.3 (STM32F103RC / STM32F103RE)
-#define BOARD_CREALITY_V521           4054  // SV04 Board
+#define BOARD_CREALITY_V521           4054  // Creality v5.2.1 (STM32F103VE) as found in the SV04
 #define BOARD_CREALITY_V24S1          4055  // Creality v2.4.S1 (STM32F103RC / STM32F103RE) v101 as found in the Ender-7
 #define BOARD_CREALITY_V24S1_301      4056  // Creality v2.4.S1_301 (STM32F103RC / STM32F103RE) v301 as found in the Ender-3 S1
 #define BOARD_CREALITY_V25S1          4057  // Creality v2.5.S1 (STM32F103RE) as found in the CR-10 Smart Pro
@@ -425,6 +426,8 @@
 #define BOARD_CREALITY_V24S1_301F4    4240  // Creality v2.4.S1_301F4 (STM32F401RC) as found in the Ender-3 S1 F4
 #define BOARD_OPULO_LUMEN_REV4        4241  // Opulo Lumen PnP Controller REV4 (STM32F407VE / STM32F407VG)
 #define BOARD_FYSETC_SPIDER_KING407   4242  // FYSETC Spider King407 (STM32F407ZG)
+#define BOARD_MKS_SKIPR_V1            4243  // MKS SKIPR v1.0 all-in-one board (STM32F407VE)
+#define BOARD_TRONXY_V10              4244  // TRONXY V10 (STM32F446ZE)
 
 //
 // ARM Cortex M7
