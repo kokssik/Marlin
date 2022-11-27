@@ -27,6 +27,8 @@ mczip.h
 *.gen
 *.sublime-workspace
 
+calcskew.py
+
 #
 # OS
 #

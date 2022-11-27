@@ -24,7 +24,7 @@ jobs:
     steps:
 
     - name: Set Time Zone
-      uses: szenius/set-timezone@v1.0
+      uses: szenius/set-timezone@v1.1
       with:
         timezoneLinux: "Europe/Prague"
         
@@ -62,3 +62,9 @@ jobs:
     - name: Upload the fw    
       run: |
         curl --user "${{ secrets.DAV_USER }}:${{ secrets.DAV_PASS }}" -T ".pio/build/mega2560/firmware.hex" "${{ secrets.DAV_SERVER }}/${{ secrets.DAV_PATH }}/firmware_`date +%d_%m_%y_%H_%M`_A10Pro_2.1.x_bilinear-SD.hex" --anyauth
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: firmware.bin
+        path: .pio/build/mega2560/firmware.hex
