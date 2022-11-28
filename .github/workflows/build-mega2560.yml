@@ -59,9 +59,6 @@ jobs:
     - name: Build the FW
       run: |
         pio run -j7
-    - name: Upload the fw    
-      run: |
-        curl --user "${{ secrets.DAV_USER }}:${{ secrets.DAV_PASS }}" -T ".pio/build/mega2560/firmware.hex" "${{ secrets.DAV_SERVER }}/${{ secrets.DAV_PATH }}/firmware_`date +%d_%m_%y_%H_%M`_A10Pro_2.1.x_bilinear-SD.hex" --anyauth
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
